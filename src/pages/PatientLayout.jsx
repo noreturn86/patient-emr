@@ -1,13 +1,18 @@
 import { useState } from "react";
 import { Outlet, Link } from "react-router-dom";
+import { useSelector } from 'react-redux';
 
 export default function PatientLayout() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const patient = useSelector((state) => state.auth.patient);
+  const token = useSelector((state) => state.auth.token);
 
   return (
     <div className="w-full">
       <div className="border flex items-center justify-end gap-4 p-3 relative">
-        <h1 className="text-blue-400 text-2xl font-semibold">Janice Smith</h1>
+        <h1 className="text-blue-400 text-2xl font-semibold">
+          {patient ? `${patient.firstName} ${patient.lastName}` : 'Loading...'}
+        </h1>
 
         <i
           className="fa-solid fa-bars text-2xl cursor-pointer"

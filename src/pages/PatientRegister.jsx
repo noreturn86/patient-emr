@@ -21,7 +21,7 @@ export default function PatientRegister() {
         setLoading(true);
 
         try {
-            const res = await axios.post('http://localhost:8080/api/register-patient', form);
+            const res = await axios.post('http://localhost:8080/patients/register-patient', form);
             setUsername(res.data.username);
             setTimeout(() => navigate('/login'), 3000);
         } catch (err) {

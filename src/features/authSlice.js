@@ -10,7 +10,7 @@ const authSlice = createSlice({
   initialState,
   reducers: {
     setPatient: (state, action) => {
-      state.patient = action.payload.provider;
+      state.patient = action.payload.patient;
       state.token = action.payload.token;
 
       // Persist token to localStorage

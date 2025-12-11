@@ -1,6 +1,10 @@
 import { Link } from "react-router-dom";
+import { useSelector } from 'react-redux';
 
 export default function PatientMain() {
+  const patient = useSelector((state) => state.auth.patient);
+  const token = useSelector((state) => state.auth.token);
+
   return (
     <>
       <div className="flex justify-center mb-6">
