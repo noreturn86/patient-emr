@@ -1,11 +1,12 @@
 import { useState } from "react";
-import { Outlet, Link } from "react-router-dom";
+import { Outlet, Link, Navigate, useNavigate } from "react-router-dom";
 import { useSelector } from 'react-redux';
 
 export default function PatientLayout() {
   const [menuOpen, setMenuOpen] = useState(false);
   const patient = useSelector((state) => state.auth.patient);
   const token = useSelector((state) => state.auth.token);
+  const navigate = useNavigate();
 
   return (
     <div className="w-full">
@@ -21,6 +22,12 @@ export default function PatientLayout() {
 
         {menuOpen && (
           <div className="absolute right-3 top-16 bg-white border shadow rounded w-32">
+            <button 
+              className="w-full text-left px-4 py-2 hover:bg-gray-100"
+              onClick={() => {navigate('/account')}}
+            >
+              Account
+            </button>
             <button className="w-full text-left px-4 py-2 hover:bg-gray-100">
               Log out
             </button>

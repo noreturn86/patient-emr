@@ -86,7 +86,7 @@ export default function PatientRegister() {
 
                 <button
                     type="button"
-                    onClick={() => navigate('/login')}
+                    onClick={() => navigate('/')}
                     className="w-full bg-blue-200 hover:bg-blue-100 text-blue-800 font-semibold py-3 rounded-lg transition-colors duration-200"
                 >
                     Already have an account? Login

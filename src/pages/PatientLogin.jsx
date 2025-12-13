@@ -79,10 +79,10 @@ export default function Login() {
 
         <button
           type="button"
-          onClick={() => {navigate('/')}}
+          onClick={() => {navigate('/register')}}
           className="w-full bg-blue-200 hover:bg-blue-100 text-blue-800 font-semibold py-3 rounded-lg transition-colors duration-200"
         >
-          Create Account
+          New? Create an account
         </button>
 
         {error && (
